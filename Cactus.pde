@@ -29,8 +29,15 @@ class Cactus {
     // put the cactus back on the right edge if it goes off the left edge
     if (x1 < -25) {
       x1 = 900; // place off screen on right 
-      s1 = -0.01;  // reset the speed (to avoid insanely fast movement)
+      s1 = -0.1;  // reset the speed (to avoid insanely fast movement)
       
     }
+  }
+  
+  //get x
+  //purpose is to return the x position of the cactus
+  float getx(){
+    return x1;
+    
   }
 } //end of class
