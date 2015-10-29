@@ -11,14 +11,14 @@ class Cactus {
 
   Cactus (float x_, float y_, float s_, float a_) {
     x1 = x_;
-    y1 = y_;
+    y1 = 175;
     a1 = a_;
     s1 = s_;
   }
   //update things related to cactus
   void update (float gravity) {
     //cactus
-    ellipse(x1, 175, 50, 50);
+    ellipse(x1, y1, 50, 50);
     //make cactus move
     // change the speed
     s1 = s1 + a1;
@@ -37,7 +37,12 @@ class Cactus {
   //get x
   //purpose is to return the x position of the cactus
   float getx(){
-    return x1;
-    
+    return x1;   
+  }
+  
+  //get Y
+  // Purpose: an accessor method; lets us find out where the cactus is (vertically)
+  float getY(){
+    return y1;
   }
 } //end of class

@@ -13,14 +13,14 @@ void setup() {
 
   // draw the canvas
   size(800, 200);
-  
+
   //creates and initialises the dino object in the game
   d1 = new Dino (0, 170, 0);
 
   //make and set position for the new cactus
   c1 = new Cactus (900, 175, -0.1, -0.1);
 
-  
+
 
   // set gravity
   gravity = 0.005;
@@ -35,18 +35,9 @@ void draw() {
 
 
 
-
-
-  ////status update 
-  //textSize(12);
-  //text("dinoY is " + dinoY, 150, 25);
-  //text("dinoS is " + dinoS, 150, 50);
-  //text("dinoA is " + dinoS, 150, 75);
-  //text("distance is" + distance, 150, 100);
-  
   //dino update
   d1.update(gravity);
-  
+
   //cactus update
   c1.update(gravity);
 
@@ -63,20 +54,14 @@ void draw() {
   // textSize(40);
   // text("Mad cause bad", 50, 100);
   //}
-
-  
-
-
-
-
- 
 }
 
 
 // respond to keypress 
-//void keyPressed() { 
-
-//  if (dinoY >= 170) {
-//    dinoS = -9;
-  //}
-//}
+void keyPressed() { 
+  //makes the dino jump
+  if (d1.getY() == 170) {
+    println("about to jump");
+    d1.setA(-1);
+  }
+}

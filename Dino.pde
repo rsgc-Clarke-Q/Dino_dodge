@@ -27,23 +27,43 @@ class Dino {
 
     // set dino's initial acceleration
     dinoA = 0;
-    
-      //move the dino
-  dinoA = dinoA + gravity; //change acceleration bassed on gravity
-  dinoY = dinoY + dinoS; //change location bassed on speed
-  dinoS = dinoS + dinoA; //changes speed based on acceleration
 
-  //stop the dino if it hits the ground
-  if (dinoY > 170) { // bottom of the screen (200) minus the radius of (30)
-   dinoA = 0;
-   dinoS = 0;
-   dinoY = 170;
+    //move the dino
+    dinoA = dinoA + gravity; //change acceleration bassed on gravity
+    dinoY = dinoY + dinoS; //change location bassed on speed
+    dinoS = dinoS + dinoA; //changes speed based on acceleration
+
+    //stop the dino if it hits the ground
+    if (dinoY > 170) { // bottom of the screen (200) minus the radius of (30)
+      dinoA = 0;
+      dinoS = 0;
+      dinoY = 170;
+    }
+
+    if (dinoY < 50) {
+      dinoA = 1;
+      dinoS = 0;
+      dinoY = 50;
+    }
+    //status update 
+    textSize(12);
+    text("dinoY is " + dinoY, 150, 25);
+    text("dinoS is " + dinoS, 150, 50);
+    text("dinoA is " + dinoS, 150, 75);
+    text("distance is" + distance, 150, 100);
+  }
+  //get Y
+  //purpose on an accesor method find where the dino is vertically
+  float getY() {
+    return dinoY;
   }
 
-  if (dinoY < 50) {
-   dinoA = 1;
-   dinoS = 0;
-   dinoY = 50;
-  }
+
+  //setA
+  // Purpose: a mutator method; lets the acceleration for the dinosaur be set
+  //          from outside the class
+
+  void setA(float newA_) {
+    dinoA = newA_;
   }
 } //end of class
