@@ -1,4 +1,4 @@
-// global variables (can be used everywhere below)
+ // global variables (can be used everywhere below)
 
 Cactus c1; //makes a place in memory to keep the cactus object
 Dino d1;  //makes a place in memory to keep the dino object
@@ -41,19 +41,13 @@ void draw() {
   //cactus update
   c1.update(gravity);
 
-  ////determine weither the distance between objects
-  //float a = dinoY - 175;
-  //float b = 50 - c1.getx()  ;
-  //distance = sqrt( pow(a, 2) + pow(b, 2) );
-
-
-  ////determine weither there is a  hit
-  ////               sum of radii
-  //if ( distance < (30 + 25) )
-  //{
-  // textSize(40);
-  // text("Mad cause bad", 50, 100);
-  //}
+   // check whether the cactus is touching the dino
+  if (d1.isTouching(c1)) {
+   textSize(80);
+    text("HIT", 400, 100);
+    noLoop();  // stop the game
+  }
+  
 }
 
 

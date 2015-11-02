@@ -5,7 +5,8 @@ class Dino {
   float dinoY;     // tracks position of dino
   float dinoS;     // tracks speed of dino
   float dinoA;     // tracks acceleration of the dino
-
+  float dinoX;
+  float dinoR;
   //constructor (runs once)
 
   Dino (float dinoY_, float dinoS_, float dinoA_) {
@@ -50,6 +51,9 @@ class Dino {
   float getY() {
     return dinoY;
   }
+  float getX(){
+    return dinoX;
+  }
 
 
   //setA
@@ -59,4 +63,27 @@ class Dino {
   void setA(float newA_) {
     dinoA = newA_;
   }
+  // isTouching
+  //
+  // Purpose: uses information about cactus position and determines if it is 
+  //          touching the dino
+  boolean isTouching(Cactus c) {
+
+    // determine distance between the objects
+    //        dino - cactus
+    float a = dinoY - c.getY();
+    float b = dinoX - c.getx();
+    distance = sqrt(a*a + b*b);
+
+    // decide whether dino is touching this cactus
+    //            dino radius   cactus radius
+    if ( distance < (   dinoR   +     c.getR() ) ) {
+      return true;  // exit the method and say "yes" (is touching!) or "true"
+    }
+    
+    // when dino is not touching, say "no" (not touching) or "false"
+    return false;
+  }
+  
+  
 } //end of class

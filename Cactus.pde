@@ -6,7 +6,7 @@ class Cactus {
   float s1;    // speed for first cactus
   float a1;    // acceleration for first cactus
   float y1;    // tracks vertical position of first cactus
-
+  float r1;
   //constructor (runs once)
 
   Cactus (float x_, float y_, float s_, float a_) {
@@ -14,11 +14,12 @@ class Cactus {
     y1 = 175;
     a1 = a_;
     s1 = s_;
+    r1 = 25;
   }
   //update things related to cactus
   void update (float gravity) {
     //cactus
-    ellipse(x1, y1, 50, 50);
+    ellipse(x1, y1, r1*2, r1*2);
     //make cactus move
     // change the speed
     s1 = s1 + a1;
@@ -44,5 +45,12 @@ class Cactus {
   // Purpose: an accessor method; lets us find out where the cactus is (vertically)
   float getY(){
     return y1;
+  }
+  
+  // getR
+  //
+  // Purpose: an accessor method; lets us find out the cactus radius
+    float getR() {
+   return r1;
   }
 } //end of class
