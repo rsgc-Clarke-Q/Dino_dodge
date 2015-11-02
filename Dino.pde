@@ -19,14 +19,7 @@ class Dino {
     // draw the dino
     ellipse(50, dinoY, 60, 60);
 
-    // set dino initial vertical position
-    dinoY = 170;
 
-    // set dino's initial speed
-    dinoS = 0;
-
-    // set dino's initial acceleration
-    dinoA = 0;
 
     //move the dino
     dinoA = dinoA + gravity; //change acceleration bassed on gravity
